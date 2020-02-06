@@ -1,0 +1,110 @@
+===============================================================================================================================================
+===============================================================================================================================================
+=====================================GUIDA PER CONFIGURARE LO SCRIPT SU WINDOWS================================================================
+===============================================================================================================================================
+===============================================================================================================================================
+==========Questa guida è stata fatta al solo scopo di farti mettere mano sullo script senza che tu debba chiedere aiuto a qualcuno=============
+===============================================================================================================================================
+==========I passaggi sono semplici e come prima cosa ti chiederò di effettuare la configurazione fino al punto 11 di MONGODB===================
+===============================================================================================================================================
+
+
+
+I primi passi corrispondono alla configurazione per usare python su pc Windows:
+
+1 - Andare su http://www.python.it/download/
+
+2 - Scaricare 'Python 3.8.0: Installer EXE per Windows x86-64'
+
+3 - Avviare installer e fare 'Install now'
+
+4 - Aspettare che finisca di installare tutto
+
+5 - Aprire terminale e digitare 'py' (senza virgolette naturalmente), dovrebbe scrivere qualcosa di simile:
+	
+	Python 3.8.1 (tags/v3.8.1:1b293b6, Dec 18 2019, 22:39:24) [MSC v.1916 32 bit (Intel)] on win32
+	Type "help", "copyright", "credits" or "license" for more information.
+
+6 - Sei sulla shell di python, digitare 'exit()' per uscire dalla shell
+
+7 - Digitare adesso i comandi uno dopo l'altro 'py -m pip install cfscrape' , 'py -m pip install pymongo' , 'py -m pip install dnspython' , 'py -m pip install datetime' , 'py -m pip install AdvancedHTMLParser'
+
+
+
+I seguenti passi sono per configurare il db in cloud MongoDB:
+
+1 - Registrarsi al seguente link:
+	https://cloud.mongodb.com/user?signedOut=true#/atlas/register/accountProfile
+
+2 - Loggarsi con email e password
+
+3 - Cliccare su 'New project'(io ce l'ho posto sul un menu a tendina)
+
+4 - Seguire la procedura per la creazione di un progetto
+
+5 - Cliccare su 'Build a cluster' e selezionare il piano gratuito
+
+6 - La procedura per il cluster ti segnalerà la configurazione adatta per gli utenti che usano il piano 'free tier'
+
+7 - Creato il cluster ci vogliono pochi minuti per permettere al sistema di usarlo
+
+8 - Intanto, andare su 'Network access', cliccare su 'Add IP address' e sul popup che capita cliccare su 'Allow access from anywhere'. 
+
+	Infine confermare.
+
+9 - Andare sui clusters e cliccare su 'connect'
+
+10 - Ti permetterà di aggiungere il tuo IP address alla whitelist e di creare un utente che potrà connettersi al DB(segnati le credenziali utente)
+
+11 - Andare avanti cliccando 'Choose a connection method' e chiudere popup(la procedura di connessione verrà fatta direttamente sullo script
+
+12 - Aprire lo script con un editor qualunque e cercare una stringa del genere:
+	 	
+	mongodb+srv://ok:1a2b3c4d@cluster0-l9czr.gcp.mongodb.net/test?retryWrites=true&w=majority
+
+13 - La stringa è composta nel seguente modo:
+
+	mongodb-srv://<user>:<password>@<caratteri di connessione al db>
+
+14 - Se si vede sui metodi di connessione prima ignorati al punto 11, si notano degli esempi di stringhe di connessione(vedere sempre i metodi per il linguaggio python)
+
+15 - Sostituire <user> con l'user che hai creato al punto 10 
+
+16 - Sostituire password con la password corrispondente all'user creato al punto 10
+
+
+Passaggi per entrare nella cartella dello script da terminale:
+
+
+1 - Adesso bisogna andare con il terminale presso la cartella dove è stato salvato lo script
+
+2 - Per far ciò ti illustro solo i comandi che ti servono per navigare tra le cartelle con il terminale
+
+	dir = ti stampa tutti i file e le cartelle che ci sono sulla directory corrente
+
+	cd <nome-cartella> = entra in una cartella
+
+	cd .. = torna alla cartella precedente
+
+3 - Faccio un esempio:
+	
+	Di solito il terminale si apre nella cartella dell'utente
+
+	Per andare sul Desktop di fa 'cd Desktop'
+
+	Ora che sei sul Desktop puoi vedere i file e le cartelle presenti sul Desktop digitando 'dir' 
+
+3a - NB: Su Linux 'dir' non esiste ma esiste 'ls'
+
+3b - NB: Su windows a me fa partire lo script con semplice doppio click sul file .py ma non sempre è configurato in questo modo
+
+
+Avviare lo script da terminale
+
+1 - Una volta che ti trovi sulla directory dove è situato lo script digiti 'py <nome-programma>.py'
+
+2 - Esempio 'py programma.py'
+
+2a - NB: A me il programma parte digitando 'py <nome>.py' ma mi è capitato di dover digitare 'python <nome>.py' o 'python3 <nome>.py' , 
+	
+	dipende dalla versione che si utilizza di python 
