@@ -4,6 +4,7 @@ RUN pip install cfscrape
 RUN pip install requests
 RUN pip install AdvancedHTMLParser
 RUN pip install dnspython
+RUN pip install datetime
 
 RUN pip install pymongo
 
